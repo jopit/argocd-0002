@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-0002
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/jopit/argocd-0002'
+    path: manifests
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+
